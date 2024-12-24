@@ -58,6 +58,10 @@ else
   endif
 endif
 
+ifneq (,$(findstring aarch64,$(shell uname -m)))
+  SNOWBOYDETECTLIBFILE = $(TOPDIR)/lib/aarch64-ubuntu1604/libsnowboy-detect.a
+endif
+
 all: $(SNOWBOYSWIGLIBFILE) $(SNOWBOYDETECTSWIGLIBFILE)
 
 %.a:
